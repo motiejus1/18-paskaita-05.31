@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18 paskaita</title>
+
+    <style>
+        .container {
+            display:flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/f4a6959a9421eca9a791bfd0fcb4798aca6143f7">
+        <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e6b09338755ae21945fb6ad44abb8da0e366f39f">
+        <label for="koa">Koeficientas a</label>
+        <input placeholder="a" type="text" name="koa" id="koa"/>
+        <label for="kob">Koeficientas b</label>
+        <input placeholder="b" type="text" name="kob" id="kob"/>
+        <label for="koc">Koeficientas c</label>
+        <input placeholder="c" type="text" name="koc" id="koc"/>
+
+        <button class="patvirtinti">Patvirtinti</button>
+
+        <div class="rezultatas">       
+        </div>
+    </div>
+    <script>
+        "use strict";
+        
+        // Surasti tiesinės kvadratinės lygties sprendinius. 
+        //Turi buti galimybe ivesti koeficientus a, b, c.
+
+        document.querySelector('.patvirtinti').addEventListener('click', function() {
+            var a, b, c, d, x1, x2 ;// d - diskriminantas 
+
+            // a yra elemento koa reiksme
+            a = parseFloat(document.querySelector("#koa").value);
+            b = parseFloat(document.querySelector("#kob").value);
+            c = parseFloat(document.querySelector("#koc").value);
+
+            d = (b ** 2) - 4 * a * c;
+
+            console.log(d);
+
+            //a ir b ir c negali buti 0 + 
+            // d == 0;
+            // d < 0;
+            // d > 0;
+
+            if(a==0 && b==0 && c==0) {
+                console.log("Visi koeficentai yra 0, del to ispresti lygties negalim");
+            } else {
+                if(d == 0) {
+                    // x1 = -b/2a
+                    x1 = -b/(2*a);
+                    console.log(x1);
+
+                } else if(d > 0) {
+                    x1 = (-b + Math.sqrt(d))/(2*a);
+                    x2 = (-b - Math.sqrt(d))/(2*a);
+                } else if(d < 0) {
+                    console.log("Realiuju sprendiniu nera");
+                }
+            }
+
+
+            
+            // console.log(a);
+            // console.log(b);
+            // console.log(180);
+
+            // if(a>b) {
+            //     console.log("Skaicius a yra didesnis uz skaiciu b");
+            // } else if(b>a) {
+            //     console.log("Skaicius b yra didesnis uz skaiciu a");
+            // } else if (a==b) {
+            //     console.log("Skaicius yra lygus 0");
+            // } else {
+            //     console.log("kazkuris is kintamuju yra ne skaicius");
+            // }
+        });
+    </script>
+</body>
+</html>

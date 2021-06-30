@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18 paskaita Laikrodis</title>
+</head>
+<body>
+
+    <div class="laikrodis">        
+    </div>
+    <script>
+
+        // AM PM 
+
+        "use strict";
+        var isvedimoElementas = document.querySelector(".laikrodis");
+        var siosDienosData = new Date();
+
+        var vakarasRytas = "AM";
+        var h = siosDienosData.getHours(); // 0-23
+        var m = siosDienosData.getMinutes(); // 0-59
+        var s = siosDienosData.getSeconds(); // 0-59
+
+        if(h == 12) {
+            vakarasRytas = "PM";
+        }
+
+        if( h == 0) {
+            h = 12;
+        }
+
+        if (h > 12) {
+            h = h - 12;
+            vakarasRytas = "PM";
+        }
+
+        // if( h < 13 )  {
+            // vakarasRytas = "AM";
+        // } else {
+            // vakarasRytas = "PM";
+        // }
+
+
+
+        // m < 10 [-inf; 10)
+        // m <= 9 [-inf; 9]
+
+        // if(h <= 9) {
+        //     h = "0" + h;
+        // }
+
+        // if(m <= 9) {
+        //     m = "0" + m;
+        // }
+
+        // if(s <= 9) {
+        //     s = "0" + s;
+        // }
+
+
+        isvedimoElementas.innerHTML = h + " : " + m + " : " + s + " " + vakarasRytas;
+        console.log(h);
+        console.log(m);
+        console.log(s);
+
+
+
+        // 0 - 12 AM ; PM
+        //
+    </script>
+    
+</body>
+</html>
