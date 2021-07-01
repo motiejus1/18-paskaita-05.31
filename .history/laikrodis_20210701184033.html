@@ -29,36 +29,8 @@
             var h = siosDienosData.getHours(); // 0-23
             var m = siosDienosData.getMinutes(); // 0-59
             var s = siosDienosData.getSeconds(); // 0-59
-            var diena = siosDienosData.getDay();
-            var laikrodzioDiena = "Pirmadienis"; 
             
-            switch(diena) {
-            case 0: // diena == 0
-                laikrodzioDiena="Sekmadienis";
-                break;
-            case 1: // diena == 1
-                laikrodzioDiena="Pirmadienis";
-                break;
-            case 2:
-                laikrodzioDiena="Antradienis";
-                break;
-            case 3:
-                laikrodzioDiena="Treciadienis";
-                break;
-            case 4:
-                laikrodzioDiena="Ketvirtadienis";
-                break;
-            case 5:
-                laikrodzioDiena="Penktadienis";
-                break;
-            case 6:
-                laikrodzioDiena="Sestadienis";
-                break;
-            default:
-                console.log("Tokios dienos nera");    
-        }
-
-
+            
             if(h == 12) {
                 vakarasRytas = "PM";
             }
@@ -78,7 +50,7 @@
             if(s <= 9) {
                 s = "0" + s;
             }
-            isvedimoElementas.innerHTML = h + " : " + m + " : " + s + " " + vakarasRytas + " " + laikrodzioDiena;
+            isvedimoElementas.innerHTML = h + " : " + m + " : " + s + " " + vakarasRytas;
             console.log(h);
             console.log(m);
             console.log(s);
